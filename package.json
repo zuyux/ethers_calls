@@ -1,7 +1,7 @@
 {
-  "name": "ethers_examples",
+  "name": "ethers_calls",
   "version": "1.0.0",
-  "description": "",
+  "description": "Ethers Remote Procedure Calls Samples",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "ethers": "^5.5.4"
-  }
+  },
+  "type": "module",
+  "devDependencies": {}
 }
