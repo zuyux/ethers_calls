@@ -36,7 +36,7 @@ ERC20_CONTRACT=your_erc20_contract_address
 
 ## ETH RPC Scripts
 
-### 1. **accounts.js**: Read ETH balance of a wallet address.
+### 1. **getAccount.js**: Read ETH balance of a wallet address.
 - Ensures readability by formatting Ether balance in human-readable units.
 - Uses ES Modules to load dependencies.
 ```bash
@@ -45,23 +45,7 @@ $ node calls/getAccount.js
 
 ---
 
-### 2. **read_smart_contract.js**: Fetches the balance of a wallet address from a smart contract (e.g., DAI contract).
-- Demonstrates how to interact with ERC20 contracts using Ethers.js.
-```bash
-$ node calls/getContract.js
-```
-
----
-
-### 3. **contract_event_stream.js**: Queries blocks for `Transfer` events.
-- Streams real-time blockchain data using Ethers.js’s event querying API.
-```bash
-$ node calls/getStream.js
-```
-
----
-
-### 4. **inspecting_blocks.js**: Fetches transactions from a specific block.
+### 2. **getBlocks.js**: Fetches transactions from a specific block.
 - Extracts detailed transaction data for inspection and logging.
 ```bash
 $ node calls/getBlocks.js
@@ -69,7 +53,23 @@ $ node calls/getBlocks.js
 
 ---
 
-### 5. **write_contract.js**: Transfers the entire balance of an ERC20 token from one account to another.
+### 3. **getContract.js**: Fetches the balance of a wallet address from a smart contract (e.g., DAI contract).
+- Demonstrates how to interact with ERC20 contracts using Ethers.js.
+```bash
+$ node calls/getContract.js
+```
+
+---
+
+### 4. **getStream.js**: Queries blocks for `Transfer` events.
+- Streams real-time blockchain data using Ethers.js’s event querying API.
+```bash
+$ node calls/getStream.js
+```
+
+---
+
+### 5. **postContract.js**: Transfers the entire balance of an ERC20 token from one account to another.
 - Shows how to connect a wallet to an ERC20 contract and send tokens securely.
 ```bash
 $ node calls/postContract.js
@@ -77,7 +77,7 @@ $ node calls/postContract.js
 
 ---
 
-### 6. **send_signed_transaction.js**: Transfers 0.025 ETH from one account to another.
+### 6. **postTX.js**: Transfers 0.025 ETH from one account to another.
 - Includes detailed logging of sender and receiver balances before and after the transaction.
 - Uses `.env` for securely managing private keys.
 ```bash
