@@ -1,4 +1,4 @@
-# ETH RPC Samples
+# Ethers RPC Samples
 Learn how to interact with Ethereum using Ethers.js through these simplified and modular examples.
 
 ## Technology Stack & Tools
