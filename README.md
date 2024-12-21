@@ -1,69 +1,85 @@
-# Ethers.js by Example
-Learn how to use ethers.js from these examples
+# ETH RPC Samples
+Learn how to interact with Ethereum using Ethers.js through these simplified and modular examples.
 
 ## Technology Stack & Tools
 
-- Javascript (Writing scripts)
-- [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
-- [Node.js](https://nodejs.org/en/) (To run our scripts and install ethers.js)
-- [Infura](https://infura.io/) (Node provider)
+- **ES Modules**: Modern JavaScript syntax for improved readability and maintainability.
+- **[Ethers.js](https://docs.ethers.io/v6/)**: A powerful library for blockchain interaction.
+- **[Node.js](https://nodejs.org/en/)**: For running scripts and managing dependencies.
+- **[Infura](https://infura.io/)**: A node provider for Ethereum blockchain access.
+
+---
 
 ## Setting Up
-### 1. Clone/Download the Repository
+### 1. Clone or Download the Repository:
+```bash
+$ git clone <repository-link>
+$ cd <repository-folder>
+```
 
 ### 2. Install Dependencies:
-```
+```bash
 $ npm install
 ```
 
-## Ethers.js scripts
-
-### 1_accounts.js - Reads balance of ether of wallet address
-- Input your infura project ID 
-```
-$ node examples/1_accounts.js
-```
-
-### 2_read_smart_contract.js - Reads the balance of Dai wallet address from the Dai contract
-- Input your infura project ID 
-```
-$ node examples/2_read_smart_contract.js
+### 3. Environment Variables:
+Create a `.env` file in the root directory and include the following details:
+```env
+INFURA_ID=your_infura_project_id
+ACCOUNT1=your_account1_address
+ACCOUNT2=your_account2_address
+PRIVATE_KEY1=your_account1_private_key
+ERC20_CONTRACT=your_erc20_contract_address
 ```
 
-### 3_send_signed_transaction.js - Transfers 0.025 ether from account1 to account2
-- Input your infura project ID 
-- Input your account1 public key
-- Input your account2 public key
-- Input your account1 private key
-```
-$ node examples/3_send_signed_transaction.js
+---
+
+## ETH RPC Scripts
+
+### 1. **accounts.js**: Read ETH balance of a wallet address.
+- Ensures readability by formatting Ether balance in human-readable units.
+- Uses ES Modules to load dependencies.
+```bash
+$ node calls/getAccount.js
 ```
 
-### 4_deploy_contract.js - Deploys contract on Kovan testnet by using Factory contract
-- Input your infura project ID 
-- Input your account private key
-```
-$ node examples/4_deploy_contract.js
+---
+
+### 2. **read_smart_contract.js**: Fetches the balance of a wallet address from a smart contract (e.g., DAI contract).
+- Demonstrates how to interact with ERC20 contracts using Ethers.js.
+```bash
+$ node calls/getContract.js
 ```
 
-### 5_write_contract.js - Transfers entire balance of token of your choosing from account1 to account2 (on Kovan testnet)
-- Input your infura project ID 
-- Input your account1 public key
-- Input your account2 public key
-- Input your account1 private key
-- Input contract address of the token you want to transfer (You can use the deployed contract address from the previous script)
-```
-$ node examples/5_write_contract.js
+---
+
+### 3. **send_signed_transaction.js**: Transfers 0.025 ETH from one account to another.
+- Includes detailed logging of sender and receiver balances before and after the transaction.
+- Uses `.env` for securely managing private keys.
+```bash
+$ node calls/postTX.js
 ```
 
-### 6_contract_event_stream.js - Queries a block for transfer events
-- Input your infura project ID 
-```
-$ node examples/6_contract_event_stream.js
+---
+
+### 4. **write_contract.js**: Transfers the entire balance of an ERC20 token from one account to another.
+- Shows how to connect a wallet to an ERC20 contract and send tokens securely.
+```bash
+$ node calls/postContract.js
 ```
 
-### 7_inspecting_blocks.js - Get transactions from block
-- Input your infura project ID 
+---
+
+### 5. **contract_event_stream.js**: Queries blocks for `Transfer` events.
+- Streams real-time blockchain data using Ethers.js’s event querying API.
+```bash
+$ node calls/getStream.js
 ```
-$ node examples/7_inspecting_blocks.js
+
+---
+
+### 6. **inspecting_blocks.js**: Fetches transactions from a specific block.
+- Extracts detailed transaction data for inspection and logging.
+```bash
+$ node calls/getBlocks.js
 ```
