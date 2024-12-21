@@ -13,8 +13,8 @@ Learn how to interact with Ethereum using Ethers.js through these simplified and
 ## Setting Up
 ### 1. Clone or Download the Repository:
 ```bash
-$ git clone <repository-link>
-$ cd <repository-folder>
+$ git clone https://github.com/zuyux/ethers_calls
+$ cd ethers_calls
 ```
 
 ### 2. Install Dependencies:
@@ -53,24 +53,7 @@ $ node calls/getContract.js
 
 ---
 
-### 3. **send_signed_transaction.js**: Transfers 0.025 ETH from one account to another.
-- Includes detailed logging of sender and receiver balances before and after the transaction.
-- Uses `.env` for securely managing private keys.
-```bash
-$ node calls/postTX.js
-```
-
----
-
-### 4. **write_contract.js**: Transfers the entire balance of an ERC20 token from one account to another.
-- Shows how to connect a wallet to an ERC20 contract and send tokens securely.
-```bash
-$ node calls/postContract.js
-```
-
----
-
-### 5. **contract_event_stream.js**: Queries blocks for `Transfer` events.
+### 3. **contract_event_stream.js**: Queries blocks for `Transfer` events.
 - Streams real-time blockchain data using Ethers.js’s event querying API.
 ```bash
 $ node calls/getStream.js
@@ -78,8 +61,25 @@ $ node calls/getStream.js
 
 ---
 
-### 6. **inspecting_blocks.js**: Fetches transactions from a specific block.
+### 4. **inspecting_blocks.js**: Fetches transactions from a specific block.
 - Extracts detailed transaction data for inspection and logging.
 ```bash
 $ node calls/getBlocks.js
+```
+
+---
+
+### 5. **write_contract.js**: Transfers the entire balance of an ERC20 token from one account to another.
+- Shows how to connect a wallet to an ERC20 contract and send tokens securely.
+```bash
+$ node calls/postContract.js
+```
+
+---
+
+### 6. **send_signed_transaction.js**: Transfers 0.025 ETH from one account to another.
+- Includes detailed logging of sender and receiver balances before and after the transaction.
+- Uses `.env` for securely managing private keys.
+```bash
+$ node calls/postTX.js
 ```
